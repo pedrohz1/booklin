@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+
+    <%- include("./partials/usercard.ejs") %>
+
+    <div class="content">
+
+        <h1 style="color: white; text-shadow: 2px 2px #a044c4;">Adicionar Livro</h1>
+
+        <div class="auth-card" style="flex-direction: column; gap: 20px; width: 100%;">
+
+            <form action="/books/add" method="POST" class="formbox" style="width: 100%;">
+
+                <label>Título:</label>
+                <input type="text" name="title" required>
+
+                <label>URL da capa:</label>
+                <input type="url" name="cover" placeholder="https://...">
+
+                <label>Autor:</label>
+                <input type="text" name="author">
+
+                <label>Descrição:</label>
+                <textarea name="desc" style="min-height: 60px; border: 1px solid #f5e991; border-radius: 5px;"></textarea>
+
+                <label>Link do livro:</label>
+                <input type="url" name="link" placeholder="https://...">
+
+                <label>Status:</label>
+                <select name="status" id="status-select"
+                        style="padding: 7px; border: 1px solid #f5e991; border-radius: 5px;">
+                    <option value="desejado">Desejado</option>
+                    <option value="lido">Lido</option>
+                </select>
+
+                <div id="rating-group" style="display:none;">
+                    <label>Nota:</label>
+                    <input type="number" name="rating" min="0" max="10" step="0.1">
+                </div>
+
+                <button type="submit" class="btn">Adicionar</button>
+            </form>
+
+        </div>
+
+    </div>
+
+    <script>
+        const statusSelect = document.getElementById("status-select");
+        const ratingGroup = document.getElementById("rating-group");
+
+        statusSelect.addEventListener("change", () => {
+            if (statusSelect.value === "lido") {
+                ratingGroup.style.display = "flex";
+                ratingGroup.style.flexDirection = "column";
+                ratingGroup.style.gap = "6px";
+            } else {
+                ratingGroup.style.display = "none";
+            }
+        });
+    </script>
+
+</body>
+</html>

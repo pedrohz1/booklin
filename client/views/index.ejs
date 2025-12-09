@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<%- include("./partials/head.ejs") %>
+
+<body>
+
+    <%- include("./partials/usercard.ejs") %>
+
+
+    <div class="home-content">
+
+        <!-- Header com status -->
+        <div class="home-header">
+            <h1>Booklin</h1>
+        </div>
+
+        <h2 class="home-subtitle">Escolha onde deseja entrar:</h2>
+
+        <div class="home-icons">
+
+            <a href="/books/readlist" class="home-card">
+                <i class="fa-sharp fa-solid fa-book"></i>
+                <span>Readlist</span>
+            </a>
+
+            <a href="/books/reads" class="home-card">
+                <i class="fa-sharp fa-solid fa-user"></i>
+                <span>Livros lidos</span>
+            </a>
+
+            <a href="/books/metas" class="home-card">
+                <div class="fa-sharp fa-solid fa-check"></div>
+                <span>Metas</span>
+            </a>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

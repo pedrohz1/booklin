@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+    <div class="content">
+
+        <% if (regtext && color === "green") { %>
+            <div class="status-message success"><%= regtext %></div>
+        <% } %>
+
+        <% if (regtext && color === "red") { %>
+            <div class="status-message error"><%= regtext %></div>
+        <% } %>
+
+        <div class="auth-card">
+
+            <form action="/users/login" method="POST" class="formbox">
+                <span class="logname">Login</span>
+
+                <label for="username">Nome de usuário:</label>
+                <input type="text" name="username" required>
+
+                <label for="password">Senha:</label>
+                <input type="password" name="password" minlength="8" required>
+
+                <button type="submit" class="btn">Entrar</button>
+            </form>
+
+            <div class="divider"></div>
+
+            <form action="/users/register" method="POST" class="formbox">
+                <span class="logname">Registrar</span>
+
+                <label for="username">Nome de usuário:</label>
+                <input type="text" name="username" required>
+
+                <label for="password">Senha:</label>
+                <input type="password" name="password" minlength="8" required>
+
+                <button type="submit" class="btn">Criar conta</button>
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

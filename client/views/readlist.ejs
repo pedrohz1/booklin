@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+    <body>
+       <div class="content">
+         <% if(books.length > 0) { %>
+            <div class="books">
+                    <% books.forEach(book => { %> 
+                        <a href="/books/<%= book._id %>" class="book-cover">
+                            <img src="<%= book.cover %>" width="127px" height="182px">
+                        </a>  
+                    <% }) %>
+                </div>
+        <%  } else { %>
+            <div>Não há livros na readlist.</div>
+        <% } %>
+
+        <a class="btn" style="padding: 10px" href="/books/add">Adicionar Livro</a>
+       </div>
+    </body>
+
+</html>
