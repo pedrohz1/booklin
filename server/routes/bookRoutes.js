@@ -5,10 +5,6 @@ router.get("/readlist", bookController.getReadlist);
 
 router.get("/reads", bookController.getReads);
 
-router.get("/metas", (req, res) => {
-    res.render("metas");
-});
-
 router.get("/add", bookController.getAddPage);
 
 router.get("/:id" , bookController.getEditPage);

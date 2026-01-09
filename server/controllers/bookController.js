@@ -3,7 +3,7 @@ const bookService = require('../services/bookServices');
 exports.getReadlist = async (req, res) => {
     try {
         if (req.session.username === undefined) {
-            res.redirect("http://localhost:3000/users/login");
+            res.redirect("/users/login");
             return;
         } 
 
@@ -19,7 +19,7 @@ exports.getReadlist = async (req, res) => {
 exports.getReads = async (req, res) => {
     try {
         if (req.session.username === undefined) {
-            res.redirect("http://localhost:3000/users/login");
+            res.redirect("/users/login");
             return;
         } 
 
@@ -35,7 +35,7 @@ exports.getReads = async (req, res) => {
 exports.getAddPage = async (req, res) => {
     try {
         if (req.session.username === undefined) {
-            res.redirect("http://localhost:3000/users/login");
+            res.redirect("/users/login");
             return;
         } 
         
@@ -68,7 +68,7 @@ exports.addBook = async (req, res) => {
 exports.getEditPage = async (req, res) => {
     try {
         if (req.session.username === undefined) {
-            res.redirect("http://localhost:3000/users/login");
+            res.redirect("/users/login");
             return;
         }
         const id = req.params.id;
